@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BINI — Hero Page</title>
+    <link rel="icon" href="bini.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(160deg, #0d0008 0%, #3d0030 40%, #1a0010 70%, #0d0008 100%);
+            min-height: 100vh;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+        body::before {
+            content: ''; position: absolute;
+            width: 700px; height: 700px;
+            background: radial-gradient(circle, #ff69b430 0%, #ff149322 30%, transparent 70%);
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        @keyframes shimmer {
+            0% { background-position: 0% } 100% { background-position: 200% }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-wrapper {
+            display: flex; align-items: center; justify-content: center;
+            min-height: 100vh; text-align: center; padding: 40px 20px;
+        }
+        .hero {
+            position: relative; max-width: 700px;
+            animation: fade-in-up 0.8s ease both;
+        }
+        .hero-tag {
+            font-size: 11px; letter-spacing: 5px; color: #ff69b4;
+            text-transform: uppercase; margin-bottom: 20px;
+            display: inline-flex; align-items: center; gap: 10px;
+        }
+        .hero-tag::before, .hero-tag::after {
+            content: ''; display: inline-block;
+            width: 30px; height: 1px; background: #ff69b466;
+        }
+        .hero-title {
+            font-size: clamp(40px, 7vw, 76px); font-weight: 900;
+            line-height: 1.05; margin-bottom: 24px;
+            text-shadow: 0 0 40px #ff69b444, 0 0 80px #ff149322;
+        }
+        .hero-title span {
+            background: linear-gradient(135deg, #ff69b4, #ff1493, #ff69b4);
+            background-size: 200%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; animation: shimmer 3s linear infinite;
+        }
+        .hero-sub {
+            font-size: 15px; color: #f8bbd0; line-height: 1.8;
+            margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto;
+        }
+        .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            padding: 14px 36px; background: #ff69b4; color: #1a0010;
+            font-weight: 700; font-size: 14px; border: none;
+            border-radius: 10px; cursor: pointer;
+            font-family: 'Poppins', Arial, sans-serif;
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover { background: #e91e8c; box-shadow: 0 0 24px #ff69b488; transform: translateY(-2px); }
+        .btn-outline {
+            padding: 14px 36px; background: transparent; color: #ff69b4;
+            font-weight: 700; font-size: 14px; border: 2px solid #ff69b4;
+            border-radius: 10px; cursor: pointer;
+            font-family: 'Poppins', Arial, sans-serif;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+        }
+        .btn-outline:hover { background: #ff69b4; color: #1a0010; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <div class="hero-wrapper">
+        <div class="hero">
+            <p class="hero-tag">✦ Philippines' Pride</p>
+            <h1 class="hero-title">Feel the <span>Magic</span><br>of BINI</h1>
+            <p class="hero-sub">BINI is the Philippines' premier P-pop girl group under Star Music. With 8 talented members — Aiah, Colet, Maloi, Gwen, Stacey, Mikha, Jhoanna, and Sheena — they are Born to be a Star.</p>
+            <div class="hero-btns">
+                <button class="btn-primary">▶ Play Now</button>
+                <button class="btn-outline">Meet the Members</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

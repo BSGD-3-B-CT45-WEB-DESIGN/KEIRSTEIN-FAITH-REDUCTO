@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BINI — Login Page</title>
+    <link rel="icon" href="bini.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0d0008 0%, #3d0030 50%, #1a0010 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 40%, #ff69b422 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 70%, #ff149318 0%, transparent 50%);
+        }
+        @keyframes login-appear {
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .login-box {
+            background: rgba(255,105,180,0.06);
+            border: 1px solid #ff69b444;
+            border-radius: 20px;
+            padding: 44px 40px;
+            width: 370px;
+            text-align: center;
+            box-shadow: 0 0 40px #ff69b422, 0 0 80px #ff149311, inset 0 1px 0 #ff69b422;
+            position: relative; z-index: 1;
+            animation: login-appear 0.6s ease;
+        }
+        .login-box h1 {
+            font-size: 26px; margin-bottom: 6px;
+            color: #ff69b4;
+            text-shadow: 0 0 16px #ff69b4, 0 0 40px #ff1493;
+            font-weight: 900;
+        }
+        .login-box p { color: #f8bbd0; font-size: 13px; margin-bottom: 24px; }
+        .login-box input {
+            width: 100%; padding: 12px 16px; margin-bottom: 14px;
+            border-radius: 8px; border: 1px solid #ff69b444;
+            background: rgba(255,105,180,0.08); color: white;
+            font-size: 14px; outline: none; transition: border 0.3s;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        .login-box input:focus { border-color: #ff69b4; }
+        .login-box button {
+            width: 100%; padding: 12px; background: #ff69b4;
+            color: #1a0010; font-weight: bold; font-size: 15px;
+            border: none; border-radius: 8px; cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        .login-box button:hover { background: #e91e8c; box-shadow: 0 0 16px #ff69b488; }
+        .login-box .link { margin-top: 16px; font-size: 13px; color: #f8bbd0; }
+        .login-box .link a { color: #ff69b4; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h1>💗 BINI Fan Portal</h1>
+        <p>Sign in to enter the BINI universe</p>
+        <input type="text" placeholder="Username or Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+        <div class="link">Not a BINIverse member yet? <a href="#">Sign up</a></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BINI — Image, Favicon & Audio</title>
+    <link rel="icon" href="bini.jpeg" type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: url('bini.jpeg') no-repeat center center;
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+            padding: 60px 40px;
+            color: white;
+        }
+        body::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(180deg, rgba(26,0,16,0.88) 0%, rgba(61,0,48,0.72) 50%, rgba(13,0,8,0.92) 100%);
+        }
+        body > * { position: relative; }
+
+        @keyframes scrolling {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes shimmer-text {
+            0% { background-position: 0% } 100% { background-position: 200% }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-title {
+            font-size: 10px; letter-spacing: 5px; font-weight: 700;
+            text-transform: uppercase; margin-bottom: 30px;
+            color: #ff69b4;
+            display: inline-flex; align-items: center; gap: 10px;
+        }
+        .page-title::before, .page-title::after {
+            content: ''; display: inline-block;
+            width: 24px; height: 1px; background: #ff69b455;
+        }
+        .playlist-bar {
+            overflow: hidden; white-space: nowrap; padding: 14px 0; margin-bottom: 40px;
+            border-top: 1px solid #ff69b433; border-bottom: 1px solid #ff69b433;
+        }
+        .scroll-text {
+            display: inline-block; color: #ff69b4;
+            font-size: 16px; font-weight: 700; padding-left: 100%;
+            animation: scrolling 20s linear infinite;
+            text-shadow: 0 0 8px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff1493;
+            letter-spacing: 1px;
+        }
+        .audio-card {
+            background: rgba(255,105,180,0.07);
+            border: 1px solid #ff69b433;
+            border-radius: 24px;
+            padding: 40px 48px;
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 8px 48px #ff69b41a, inset 0 1px 0 #ff69b422;
+            animation: fade-in-up 0.7s ease both;
+        }
+        .audio-card-img {
+            width: 180px; height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid #ff69b455;
+            box-shadow: 0 0 24px #ff69b433;
+            margin-bottom: 20px;
+        }
+        .soft2-title {
+            font-size: 26px; font-weight: 900; margin-bottom: 20px;
+            background: linear-gradient(90deg, #fff, #ff69b4, #fff);
+            background-size: 200%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; animation: shimmer-text 4s linear infinite;
+        }
+        audio {
+            margin-top: 4px; width: 100%;
+            filter: hue-rotate(300deg) saturate(1.5) brightness(1.1);
+            border-radius: 30px;
+        }
+        .gif-row {
+            display: flex; align-items: center; justify-content: center;
+            gap: 16px; margin-top: 20px;
+        }
+        .gif { width: 40px; height: 40px; }
+        .gif-label { color: white; font-size: 15px; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <p class="page-title">✦ Activity 4 — Image, Favicon & Audio</p>
+    <div class="playlist-bar">
+        <div class="scroll-text">💗 BINI - Step Back • BINI • Na Na Na 💗 Alam Mo Na • Pantropiko • Salamin, Salamin 💗</div>
+    </div>
+    <div class="audio-card">
+        <img class="audio-card-img" src="bini.jpeg" alt="BINI">
+        <h2 class="soft2-title">BINI — Step Back</h2>
+        <audio controls>
+            <source src="BINI _ Step Back Official Lyric Video.mp3" type="audio/mpeg">
+        </audio>
+        <div class="gif-row">
+            <img class="gif" src="cat.gif" alt="cat gif">
+            <span class="gif-label">BINI</span>
+            <img class="gif" src="cat.gif" alt="cat gif">
+        </div>
+    </div>
+</body>
+</html>
